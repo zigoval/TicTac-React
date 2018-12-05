@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-import Score from "./Score";
 import TicTac from "./TicTac";
+import styled from "styled-components";
+
+const TableDiv = styled.div`
+  flex: 2;
+`;
 
 class Table extends Component {
   constructor(props) {
@@ -26,13 +30,10 @@ class Table extends Component {
   };
 
   didWin = () => {
-    console.log(this.state.p1TurnYouOn);
-    console.log(this.state.board);
     const s = this.state.p1TurnYouOn ? "X" : "O";
     const board = this.state.board;
+    console.log(board);
     let isWinning = null;
-    this.setState({ p1TurnYouOn: !this.state.p1TurnYouOn });
-
     for (let i = 0; i < 3; i++) {
       if (board[i][0] === s && board[i][1] === s && board[i][2] === s) {
         isWinning = s;
@@ -49,6 +50,9 @@ class Table extends Component {
     if (board[0][2] === s && board[1][1] === s && board[2][0] === s) {
       isWinning = s;
     }
+
+    this.setState({ p1TurnYouOn: !this.state.p1TurnYouOn });
+    this.props.commentOnClick();
 
     if (isWinning === "X") {
       this.setState(state => ({
@@ -93,10 +97,9 @@ class Table extends Component {
     const scoreP2 = this.state.scoreP2;
 
     return (
-      <div>
+      <TableDiv>
         <TicTac board={board} onHandleClick={this.handleclick} />
-        <Score scoreP1={scoreP1} scoreP2={scoreP2} reset={this.resetGame} />
-      </div>
+      </TableDiv>
     );
   }
 }

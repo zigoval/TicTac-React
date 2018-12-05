@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import unicorn1 from "./images/unicorn1.jpeg";
-import unicorn2 from "./images/unicorn2.jpeg";
-import empty from "./images/empty.png";
+import unicorn1 from "../images/unicorn1.jpeg";
+import unicorn2 from "../images/unicorn2.jpeg";
+import empty from "../images/empty.png";
 import styled from "styled-components";
 
 const ImageInCase = styled.img`
