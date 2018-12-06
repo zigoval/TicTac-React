@@ -17,8 +17,7 @@ class Score extends Component {
   };
 
   render() {
-    const scoreP1 = this.props.scoreP1;
-    const scoreP2 = this.props.scoreP2;
+    const { scoreP1, scoreP2 } = this.props.data;
     return (
       <div>
         <table>

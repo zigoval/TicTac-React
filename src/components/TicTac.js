@@ -23,9 +23,13 @@ class TicTac extends Component {
       <Table id="tictac">
         <tbody>
           {this.props.board.map((row, x) => (
-            <tr>
+            <tr key={x}>
               {row.map((cell, y) => (
-                <Case className="case" onClick={this.props.onHandleClick(x, y)}>
+                <Case
+                  className="case"
+                  onClick={this.props.onHandleClick(x, y)}
+                  key={y}
+                >
                   <Unicase cell={cell} />
                 </Case>
               ))}

@@ -13,4 +13,16 @@ const CommentInGame = [
   "You mama is a better player !"
 ];
 
+export const CommentEndOfGame = [
+  "Was a good Game ! an other One?",
+  "Finally it's over !!!",
+  "He humiliated you !!"
+];
+
+export const CommentsOnDraw = [
+  "it looks like it over.",
+  "It's a draw !",
+  "No winner on this one.."
+];
+
 export default CommentInGame;

@@ -9,18 +9,27 @@ const CommentDiv = styled.div`
   overflow: auto;
   height: 500px;
 `;
+const ParaWin = styled.p`
+  font-size: 16px;
+  color: red;
+`;
 
 class Comments extends Component {
   render() {
-    const p1 = "player1";
-    const p2 = "player2";
-    const comments = this.props.comments;
+    const { comments, winner } = this.props;
+    const min = comments.length - 10 <= 0 ? 0 : comments.length - 10;
     return (
       <CommentDiv>
         <h2>Live-Comments :</h2>
-        {comments.map(comment => (
-          <p>{comment}</p>
-        ))}
+        {comments
+          .slice(min, comments.length)
+          .map((comment, index) =>
+            winner ? (
+              <ParaWin key={index}>{comment}</ParaWin>
+            ) : (
+              <p key={index}>{comment}</p>
+            )
+          )}
       </CommentDiv>
     );
   }
