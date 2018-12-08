@@ -2,14 +2,7 @@ import React, { Component } from "react";
 import unicorn1 from "../images/unicorn1.jpeg";
 import unicorn2 from "../images/unicorn2.jpeg";
 import empty from "../images/empty.png";
-import styled from "styled-components";
-
-const ImageInCase = styled.img`
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 15%;
-`;
+import { ImageInCase } from "../styles";
 
 class Unicase extends Component {
   fonction = cell => {

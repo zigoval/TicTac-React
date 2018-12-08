@@ -1,21 +1,6 @@
 import React, { Component } from "react";
 import Unicase from "./Unicase";
-import styled from "styled-components";
-
-const Case = styled.td`
-  border: solid black 1px;
-  border-radius: 15%;
-  text-align: center;
-  align-content: center;
-  width: 33%;
-  height: 33%;
-`;
-const Table = styled.table`
-  width: 50%;
-  min-width: 200px;
-  max-width: 800px;
-  margin: auto;
-`;
+import { Table, Case } from "../styles";
 
 class TicTac extends Component {
   render() {

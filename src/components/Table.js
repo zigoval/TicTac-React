@@ -1,25 +1,7 @@
 import React, { Component } from "react";
 import TicTac from "./TicTac";
-import styled from "styled-components";
 import Score from "./Score";
-
-const TableDiv = styled.div`
-  flex: 1;
-  padding: 25px;
-  text-align: center;
-  width: 100%;
-  & > div > table {
-    width: 500px;
-    padding: 15px;
-    margin: auto;
-    & td {
-      width: 250px;
-    }
-  }
-  & button {
-    margin: 5px;
-  }
-`;
+import TableDiv from "../styles/TableDiv";
 
 class Table extends Component {
   constructor(props) {

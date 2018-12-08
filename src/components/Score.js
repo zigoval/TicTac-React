@@ -1,19 +1,6 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-
-const ButtonReset = styled.button`
-  color: ${props => (props.winner ? "#FFF" : "")};
-  background-color: ${props => (props.winner ? "blue" : "")};
-  font-size: ${props => (props.winner ? "16px" : "")};
-  text-transform: ${props => (props.winner ? "uppercase" : "")};
-  border-radius: ${props => (props.winner ? "15%" : "")};
-`;
-const Form = styled.form`
-  & input {
-    max-width: 100px;
-    margin: 10px;
-  }
-`;
+import ButtonReset from "../styles/ButtonReset";
+import Form from "../styles/Form";
 
 class Score extends Component {
   constructor(props) {

@@ -7,20 +7,8 @@ import CommentInGame, {
   CommentEndOfGame,
   CommentsOnDraw
 } from "./constants/Comments";
-import styled from "styled-components";
 import Footer from "./components/Footer";
-
-const Body = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 10px;
-  padding-bottom: 160px;
-`;
-const Container = styled.div`
-  height: 100%;
-  position: relative;
-`;
+import { Body, Container } from "../src/styles";
 
 class Main extends Component {
   constructor(props) {
@@ -59,7 +47,6 @@ class Main extends Component {
     } else {
       comments.push(CommentInGame[sizeOfCommentInGame]);
     }
-    console.log(comments);
     this.setState({ comments: comments, winner: winner });
   };
   render() {
