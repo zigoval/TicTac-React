@@ -1,4 +1,13 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+
+const ButtonReset = styled.button`
+  color: ${props => (props.winner ? "#FFF" : "")};
+  background-color: ${props => (props.winner ? "blue" : "")};
+  font-size: ${props => (props.winner ? "16px" : "")};
+  text-transform: ${props => (props.winner ? "uppercase" : "")};
+  border-radius: ${props => (props.winner ? "15%" : "")};
+`;
 
 class Score extends Component {
   constructor(props) {
@@ -7,17 +16,22 @@ class Score extends Component {
       player1: "Player 1",
       player2: "Player 2"
     };
+    this.setPlayerOneName.bind(this);
   }
-  handleChange = e => {
-    if (e.target.name === "player1") {
-      this.setState({ player1: e.target.value });
-    } else {
-      this.setState({ player2: e.target.value });
-    }
+
+  setPlayerOneName = e => {
+    this.setState({ player1: e.target.value });
+  };
+  setPlayerTwoName = e => {
+    this.setState({ player2: e.target.value });
+  };
+
+  handleOnClick = event => {
+    this.props.setPlayerName(this.state.player1, this.state.player2);
   };
 
   render() {
-    const { scoreP1, scoreP2 } = this.props.data;
+    const { scoreP1, scoreP2, winner } = this.props.data;
     return (
       <div>
         <table>
@@ -32,12 +46,25 @@ class Score extends Component {
             </tr>
           </tbody>
         </table>
-        <button onClick={this.props.reset}>Rejouer</button>
+        <ButtonReset onClick={this.props.reset} winner={winner}>
+          Rejouer
+        </ButtonReset>
         <div>
-          <label>Joueur 1 : </label>
-          <input type="text" name="player1" onChange={this.handleChange} />
-          <label>Joueur 2 : </label>
-          <input type="text" name="player2" onChange={this.handleChange} />
+          <form>
+            <label>Joueur 1 : </label>
+            <input
+              type="text"
+              name="player1"
+              onChange={this.setPlayerOneName}
+            />
+            <label>Joueur 2 : </label>
+            <input
+              type="text"
+              name="player2"
+              onChange={this.setPlayerTwoName}
+            />
+            <input type="button" value="Valider" onClick={this.handleOnClick} />
+          </form>
         </div>
       </div>
     );

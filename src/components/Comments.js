@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const CommentDiv = styled.div`
-  flex: 1;
-  padding: 25px;
-  margin: 25px;
+  flex: 0.7;
   background-color: #f2f2f2;
   overflow: auto;
   height: 500px;
+  padding: 25px;
 `;
 const ParaWin = styled.p`
   font-size: 16px;

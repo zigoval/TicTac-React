@@ -27,9 +27,19 @@ class Main extends Component {
     super(props);
     this.state = {
       comments: ["Welcome in this new game"],
-      winner: null
+      winner: null,
+      player1: "player1",
+      player2: "player2"
     };
   }
+  setPlayerName = (p1, p2) => {
+    if (p1 !== this.state.player1 || p2 !== this.state.player2) {
+      this.setState({
+        player1: p1,
+        player2: p2
+      });
+    }
+  };
 
   commentOnClick = winner => {
     const comments = this.state.comments;
@@ -54,12 +64,16 @@ class Main extends Component {
   };
   render() {
     const data = this.state;
+
     return (
       <Container>
-        <Headers />
+        <Headers data={data} />
         <Body>
           <Comments comments={data.comments} winner={data.winner} />
-          <Table commentOnClick={this.commentOnClick} />
+          <Table
+            commentOnClick={this.commentOnClick}
+            setPlayerName={this.setPlayerName}
+          />
         </Body>
         <Footer reset={this.reset} />
       </Container>

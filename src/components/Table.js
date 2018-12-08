@@ -4,7 +4,21 @@ import styled from "styled-components";
 import Score from "./Score";
 
 const TableDiv = styled.div`
-  flex: 2;
+  flex: 1;
+  padding: 25px;
+  text-align: center;
+  width: 100%;
+  & > div > table {
+    width: 500px;
+    padding: 15px;
+    margin: auto;
+    & td {
+      width: 250px;
+    }
+  }
+  & button {
+    margin: 5px;
+  }
 `;
 
 class Table extends Component {
@@ -111,7 +125,11 @@ class Table extends Component {
     return (
       <TableDiv>
         <TicTac board={state.board} onHandleClick={this.handleclick} />
-        <Score reset={this.resetGame} data={state} />
+        <Score
+          reset={this.resetGame}
+          data={state}
+          setPlayerName={this.props.setPlayerName}
+        />
       </TableDiv>
     );
   }

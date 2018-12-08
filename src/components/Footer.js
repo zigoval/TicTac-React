@@ -5,14 +5,24 @@ const FooterDiv = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 160px; /* Height of the footer */
+  height: 100px; /* Height of the footer */
+  & ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+  }
 `;
 
 class Footer extends Component {
   render() {
     return (
       <FooterDiv>
-        <p>footer</p>
+        <ul>
+          <li>TicTacToe</li>
+          <li>ReactJs</li>
+          <li>Valentin Rouby</li>
+          <li>2018</li>
+        </ul>
       </FooterDiv>
     );
   }

@@ -11,10 +11,10 @@ const Case = styled.td`
   height: 33%;
 `;
 const Table = styled.table`
-  width: 70%;
+  width: 50%;
   min-width: 200px;
   max-width: 800px;
-  margin: 50px auto;
+  margin: auto;
 `;
 
 class TicTac extends Component {

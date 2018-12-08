@@ -16,12 +16,12 @@ const HeadTitle = styled.h1`
 
 class Header extends Component {
   render() {
-    const p1 = "player1";
-    const p2 = "player2";
+    const { player1, player2 } = this.props.data;
     return (
       <HeadDiv>
         <HeadTitle>
-          Welcome {p1} and {p2}
+          Welcome {player1} and {player2} <br />
+          to the Tic Tac unicorn !
         </HeadTitle>
       </HeadDiv>
     );
