@@ -8,6 +8,12 @@ const ButtonReset = styled.button`
   text-transform: ${props => (props.winner ? "uppercase" : "")};
   border-radius: ${props => (props.winner ? "15%" : "")};
 `;
+const Form = styled.form`
+  & input {
+    max-width: 100px;
+    margin: 10px;
+  }
+`;
 
 class Score extends Component {
   constructor(props) {
@@ -50,7 +56,7 @@ class Score extends Component {
           Rejouer
         </ButtonReset>
         <div>
-          <form>
+          <Form>
             <label>Joueur 1 : </label>
             <input
               type="text"
@@ -64,7 +70,7 @@ class Score extends Component {
               onChange={this.setPlayerTwoName}
             />
             <input type="button" value="Valider" onClick={this.handleOnClick} />
-          </form>
+          </Form>
         </div>
       </div>
     );
